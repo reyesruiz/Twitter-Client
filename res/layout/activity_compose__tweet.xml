@@ -25,14 +25,19 @@
         android:layout_alignParentTop="true"
         android:onClick="postData"
         android:text="@string/SendTweet" />
-    
-    <ListView
-        android:id="@+id/lvTwitterUser"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/btCancel"
-        android:layout_centerHorizontal="true" >
 
-    </ListView>
+    <EditText
+        android:id="@+id/etTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/btSendTweet"
+        android:layout_below="@+id/btCancel"
+        android:layout_marginTop="47dp"
+        android:ems="10"
+        android:hint="@string/something_tweet" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

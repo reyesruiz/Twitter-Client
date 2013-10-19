@@ -11,5 +11,6 @@
     <string name="Cancel">Cancel</string>
     <string name="SendTweet">Tweet</string>
     <string name="new_tweet">New Tweet</string>
+    <string name="something_tweet">Tweet Something</string>
 
 </resources>

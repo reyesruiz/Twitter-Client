@@ -15,6 +15,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 
 
+
+
 import com.digitalruiz.twitterclient.models.Tweet;
 import com.digitalruiz.twitterclient.models.User;
 import com.loopj.android.http.AsyncHttpClient;
@@ -24,20 +26,29 @@ import com.loopj.android.http.RequestParams;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 
-public class Compose_Tweet extends Activity {
 
+
+public class Compose_Tweet extends Activity {
+	
+	EditText etTweet;
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_compose__tweet);
+		etTweet = (EditText) findViewById(R.id.etTweet);
 		
 		
-		RequestParams params = new RequestParams("status", "this is a test");
+		
 		
 		
 
@@ -65,13 +76,21 @@ public class Compose_Tweet extends Activity {
 		finish();
 	}
 	
+	
 	public void postData(View v) {
-		RequestParams params = new RequestParams("status", "this is a test");
+		
+		String new_tweet = etTweet.getText().toString();
+		RequestParams params = new RequestParams("status", new_tweet);
 		
 		TwitterClientApp.getRestClient().postTweet(params, new JsonHttpResponseHandler(){
+			  
 			
 		});
 		
+		Intent onToTimeline = new Intent(getApplicationContext(), TimelineActivity.class);
+    	startActivity(onToTimeline);
+		
 	} 
+	
 
 }
