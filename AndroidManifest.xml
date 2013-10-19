@@ -47,6 +47,10 @@
             android:name="com.digitalruiz.twitterclient.TimelineActivity"
             android:label="@string/title_activity_timeline" >
         </activity>
+        <activity
+            android:name="com.digitalruiz.twitterclient.Compose_Tweet"
+            android:label="@string/title_activity_compose__tweet" >
+        </activity>
     </application>
 
 </manifest>
