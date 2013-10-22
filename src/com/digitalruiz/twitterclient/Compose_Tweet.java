@@ -49,17 +49,6 @@ public class Compose_Tweet extends Activity {
 		
 		
 		
-		
-		
-
-			
-
-				
-				
-
-				
-			
-		
 	}
 
 	

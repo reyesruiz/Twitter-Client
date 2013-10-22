@@ -6,6 +6,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 public class Tweet extends BaseModel {
 	
 	private User user;
@@ -57,6 +59,7 @@ public class Tweet extends BaseModel {
 			Tweet tweet = Tweet.fromJson(tweetJson);
 			if (tweet != null) {
 				tweets.add(tweet);
+			//	Log.d("DEBUG", tweet.toString());
 			}
 		}
 		return tweets;
