@@ -13,6 +13,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.content.ClipData.Item;
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,7 +28,9 @@ import android.widget.Toast;
 
 
 public class TweetsAdapter extends ArrayAdapter<Tweet> {
-
+	 private Context context;
+	 
+	
 	
 	public static Item_Test getRandom() {
 		return new Select().from(Item_Test.class).orderBy("RANDOM()").executeSingle();
@@ -50,8 +53,11 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 	
 	public TweetsAdapter(Context context, List<Tweet> tweets) {
 		
+	//	this.context = context;
+	//	List<Tweet> = 0;
 		
 		super(context, 0, tweets);
+		this.context = context;
 	
 	
 	}
@@ -67,7 +73,7 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 			view = inflater.inflate(R.layout.tweet_item, null);
 		}
 		
-		Tweet tweet = getItem(position);
+		final Tweet tweet = getItem(position);
 		
 		
 		ImageView imageView = (ImageView) view.findViewById(R.id.ivProfile);
@@ -95,7 +101,18 @@ public class TweetsAdapter extends ArrayAdapter<Tweet> {
 		item_test.save();
 		
 		
-		
+		view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            	String un = tweet.getUser().getScreenName().toString();
+            	Log.d("DEBUG", un);
+            	Intent i = new Intent(context, ProfileActivity.class);
+            	i.putExtra("user",un);
+        	//	startActivity(i);
+            	view.getContext().startActivity(i);
+        	//	context.startActivity(ProfileActivity.class);
+            }
+        });
 	
 		
 		

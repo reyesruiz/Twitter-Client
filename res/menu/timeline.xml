@@ -4,6 +4,15 @@
         android:id="@+id/menu_compose_tweet"
         android:orderInCategory="100"
         android:showAsAction="ifRoom|collapseActionView"
-        android:title="@string/new_tweet" android:onClick="onComposeTweet"/>
+        android:title="@string/new_tweet" 
+        android:onClick="onComposeTweet"/>
+    
+    <item
+        android:id="@+id/item1"
+        android:orderInCategory="101"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" 
+        android:onClick="onProfileView"/>
 
 </menu>

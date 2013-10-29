@@ -60,6 +60,12 @@ public class TimelineActivity extends FragmentActivity implements TabListener {
 		actionBar.selectTab(tabHome);
 	}
 
+	public void onProfileView(MenuItem mi) {
+		Intent i = new Intent(this, ProfileActivity.class);
+		i.putExtra("user","reyes_ruiz");
+		startActivity(i);
+	}
+	
 
 
 
